@@ -3,3 +3,5 @@
 /src/Services/Catalog/Catalog.API/bin
 /src/BuildingBlocks/BuildingBlocks/obj
 /src/BuildingBlocks/BuildingBlocks/bin
+/bin
+/obj
