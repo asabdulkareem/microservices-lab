@@ -23,7 +23,7 @@ public class StoreBasketCommandHandler(IBasketRepository repository)
 
         //TODO: store basket in database (use Marten upsert - if exist = update, if not exist = insert)
         //TODO: update cache
-        await repository.Storebasket(command.Cart, cancellationToken);
+        await repository.StoreBasket(command.Cart, cancellationToken);
 
         return new StoreBasketResult(command.Cart.UserName);
     }
