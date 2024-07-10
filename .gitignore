@@ -5,3 +5,7 @@
 /src/BuildingBlocks/BuildingBlocks/bin
 /bin
 /obj
+/src/Services/Basket/Basket.API/bin
+/src/Services/Basket/Basket.API/obj
+/src/Services/Discount/Discount.Grpc/bin
+/src/Services/Discount/Discount.Grpc/obj
