@@ -9,3 +9,11 @@
 /src/Services/Basket/Basket.API/obj
 /src/Services/Discount/Discount.Grpc/bin
 /src/Services/Discount/Discount.Grpc/obj
+/src/Services/Ordering/Ordering.API/bin
+/src/Services/Ordering/Ordering.API/obj
+/src/Services/Ordering/Ordering.Application/bin
+/src/Services/Ordering/Ordering.Application/obj
+/src/Services/Ordering/Ordering.Domain/bin
+/src/Services/Ordering/Ordering.Domain/obj
+/src/Services/Ordering/Ordering.Infrastructure/bin
+/src/Services/Ordering/Ordering.Infrastructure/obj
