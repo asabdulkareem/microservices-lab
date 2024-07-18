@@ -1,7 +1,4 @@
-﻿
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Ordering.Infrastructure.Data.Extensions;
+﻿namespace Ordering.Infrastructure.Data.Extensions;
 public static class DatabaseExtentions
 {
     public static async Task InitialiseDatabaseAsync(this WebApplication app)
