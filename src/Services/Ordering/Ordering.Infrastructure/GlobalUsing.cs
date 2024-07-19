@@ -13,3 +13,4 @@ global using Ordering.Domain.Abstractions;
 global using Ordering.Domain.Enums;
 global using MediatR;
 global using System.Reflection;
+global using Ordering.Application.Data;

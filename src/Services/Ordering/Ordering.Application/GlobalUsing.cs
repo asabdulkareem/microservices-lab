@@ -10,3 +10,5 @@ global using Microsoft.EntityFrameworkCore;
 global using Ordering.Domain.Models;
 global using Ordering.Application.Extensions;
 global using Ordering.Domain.ValueObjects;
+global using BuildingBlocks.Exceptions;
+global using Ordering.Application.Exceptions;
