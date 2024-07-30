@@ -17,3 +17,5 @@
 /src/Services/Ordering/Ordering.Domain/obj
 /src/Services/Ordering/Ordering.Infrastructure/bin
 /src/Services/Ordering/Ordering.Infrastructure/obj
+/src/BuildingBlocks/BuildingBlocks.Messaging/bin
+/src/BuildingBlocks/BuildingBlocks.Messaging/obj

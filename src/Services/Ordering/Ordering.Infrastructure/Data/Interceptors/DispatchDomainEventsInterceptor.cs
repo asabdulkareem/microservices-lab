@@ -1,5 +1,5 @@
 ﻿namespace Ordering.Infrastructure.Data.Interceptors;
-public class DispatchDomainEventsInterceptor(IMediator mediator) 
+public class DispatchDomainEventsInterceptor(IMediator mediator)
     : SaveChangesInterceptor
 {
     public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)

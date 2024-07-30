@@ -31,9 +31,9 @@ var app = builder.Build();
 //Configure the HTTP request pipeline
 app.MapCarter();
 
-app.UseExceptionHandler(exceptionHandlerApp =>{});
+app.UseExceptionHandler(exceptionHandlerApp => { });
 
-app.UseHealthChecks("/health", 
+app.UseHealthChecks("/health",
     new HealthCheckOptions
     {
         ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
