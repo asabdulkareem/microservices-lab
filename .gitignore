@@ -19,3 +19,5 @@
 /src/Services/Ordering/Ordering.Infrastructure/obj
 /src/BuildingBlocks/BuildingBlocks.Messaging/bin
 /src/BuildingBlocks/BuildingBlocks.Messaging/obj
+/src/ApiGateways/YarpApiGateway/bin
+/src/ApiGateways/YarpApiGateway/obj
