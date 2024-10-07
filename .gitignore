@@ -21,3 +21,5 @@
 /src/BuildingBlocks/BuildingBlocks.Messaging/obj
 /src/ApiGateways/YarpApiGateway/bin
 /src/ApiGateways/YarpApiGateway/obj
+/src/WebApps/Shopping.Web/bin
+/src/WebApps/Shopping.Web/obj
