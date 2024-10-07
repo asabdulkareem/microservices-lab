@@ -23,3 +23,5 @@
 /src/ApiGateways/YarpApiGateway/obj
 /src/WebApps/Shopping.Web/bin
 /src/WebApps/Shopping.Web/obj
+/src/Security/ClientCredentials/bin
+/src/Security/ClientCredentials/obj
