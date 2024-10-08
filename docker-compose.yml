@@ -48,9 +48,16 @@ services:
       context: .
       dockerfile: src/WebApps/Shopping.Web/Dockerfile
 
+  hybridflow:
+    image: ${DOCKER_REGISTRY-}hybridflow
+    build:
+      context: .
+      dockerfile: src/Security/HybridFlow/Dockerfile
+
 volumes:
   postgres_catalog:
   postgres_basket:
+
 
 
 

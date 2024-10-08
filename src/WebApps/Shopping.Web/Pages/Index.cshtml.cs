@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Shopping.Web.Models.Basket;
@@ -19,7 +22,6 @@ public class IndexModel
         ProductList = result.Products;
         return Page();
     }
-
     public async Task<IActionResult> OnPostAddToCartAsync(Guid productId)
     {
         logger.LogInformation("Add to cart button clicked");

@@ -25,3 +25,7 @@
 /src/WebApps/Shopping.Web/obj
 /src/Security/ClientCredentials/bin
 /src/Security/ClientCredentials/obj
+/src/Security/HybridFlow/bin
+/src/Security/HybridFlow/obj
+/src/Security/Code/obj
+/src/Security/Code/bin

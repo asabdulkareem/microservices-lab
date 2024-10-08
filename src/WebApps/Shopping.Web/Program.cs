@@ -1,45 +1,80 @@
+using IdentityModel;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
+using Shopping.Web.HttpHandlers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<AuthenticationDelegatingHandler>();
+builder.Services.AddHttpClient("IDFClient", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:6066/");
+    client.DefaultRequestHeaders.Clear();
+    client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+});
 
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddRefitClient<ICatalogService>()
     .ConfigureHttpClient(c =>
     {
         c.BaseAddress = new Uri(builder.Configuration["ApiSettings:GatewayAddress"]!);
-    });
+        c.DefaultRequestHeaders.Clear();
+        c.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+    }).AddHttpMessageHandler<AuthenticationDelegatingHandler>();
 builder.Services.AddRefitClient<IBasketService>()
     .ConfigureHttpClient(c =>
     {
         c.BaseAddress = new Uri(builder.Configuration["ApiSettings:GatewayAddress"]!);
-    });
+        c.DefaultRequestHeaders.Clear();
+        c.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+    }).AddHttpMessageHandler<AuthenticationDelegatingHandler>();
 builder.Services.AddRefitClient<IOrderingService>()
     .ConfigureHttpClient(c =>
     {
         c.BaseAddress = new Uri(builder.Configuration["ApiSettings:GatewayAddress"]!);
-    });
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultScheme = "Cookies";
-    options.DefaultChallengeScheme = "oidc";
-})
-    .AddCookie("Cookies")
-    .AddOpenIdConnect("oidc", options =>
+        c.DefaultRequestHeaders.Clear();
+        c.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+    }).AddHttpMessageHandler<AuthenticationDelegatingHandler>();
+    builder.Services.AddAuthentication(options =>
     {
-        options.Authority = "https://localhost:5056";
+        options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+    })
+            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
+            {
+                options.Authority = builder.Configuration["ApiSettings:IdentityServerAddress"];
+                options.ClientId = "Web_client";
+                options.ClientSecret = "secret";
+                options.ResponseType = "code id_token";
 
-        options.ClientId = "web";
-        options.ClientSecret = "secret";
-        options.ResponseType = "code";
+                options.Scope.Add("openid");
+                options.Scope.Add("profile");
+                options.Scope.Add("microserviceAPI");
+                options.Scope.Add("address");
+                options.Scope.Add("email");
+                options.Scope.Add("roles");
 
-        options.Scope.Clear();
-        options.Scope.Add("openid");
-        options.Scope.Add("profile");
+                options.ClaimActions.MapUniqueJsonKey("role", "role");
 
-        options.MapInboundClaims = false; // Don't rename claim types
+                options.SaveTokens = true;
 
-        options.SaveTokens = true;
-    });
+                options.GetClaimsFromUserInfoEndpoint = true;
+
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    NameClaimType = JwtClaimTypes.GivenName,
+                    RoleClaimType = JwtClaimTypes.Role
+                };
+            });
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

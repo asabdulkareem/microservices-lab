@@ -47,9 +47,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopping.Web", "src\WebApps
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{8C619CF9-38D5-4DB1-AADB-DCC6645876A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCredentials", "src\Security\ClientCredentials\ClientCredentials.csproj", "{17BCBDB6-8A47-428C-A256-E8FFF59412D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientCredentials", "src\Security\ClientCredentials\ClientCredentials.csproj", "{17BCBDB6-8A47-428C-A256-E8FFF59412D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code", "src\Security\Code\Code.csproj", "{50536245-9D2E-447F-BA27-AB8CB4338024}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Code", "src\Security\Code\Code.csproj", "{50536245-9D2E-447F-BA27-AB8CB4338024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridFlow", "src\Security\HybridFlow\HybridFlow.csproj", "{3E2559AB-D0EA-49DC-BF75-60F01AFD0A42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +115,10 @@ Global
 		{50536245-9D2E-447F-BA27-AB8CB4338024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50536245-9D2E-447F-BA27-AB8CB4338024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50536245-9D2E-447F-BA27-AB8CB4338024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2559AB-D0EA-49DC-BF75-60F01AFD0A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2559AB-D0EA-49DC-BF75-60F01AFD0A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2559AB-D0EA-49DC-BF75-60F01AFD0A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2559AB-D0EA-49DC-BF75-60F01AFD0A42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +142,7 @@ Global
 		{00DD8E1D-D546-44C8-B269-C43E9E116B41} = {D54121CA-0EEA-428E-8893-D6AC974FE4A4}
 		{17BCBDB6-8A47-428C-A256-E8FFF59412D1} = {8C619CF9-38D5-4DB1-AADB-DCC6645876A0}
 		{50536245-9D2E-447F-BA27-AB8CB4338024} = {8C619CF9-38D5-4DB1-AADB-DCC6645876A0}
+		{3E2559AB-D0EA-49DC-BF75-60F01AFD0A42} = {8C619CF9-38D5-4DB1-AADB-DCC6645876A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F013B1A-B395-4CFE-ADC4-D0227D0E8B10}
