@@ -34,11 +34,11 @@ public static class Config
                 //AllowAccessTokensViaBrowser = false,
                 RedirectUris = new List<string>
                 {
-                    "https://localhost:6065/signin-oidc"  // -- > MVC Client App port 
+                    "http://localhost:6005/signin-oidc"  // -- > MVC Client App port 
                 },
                 PostLogoutRedirectUris = new List<string>
                 {
-                    " https://localhost:6065/" // --> MVC Client App port
+                    " http://localhost:6005/" // --> MVC Client App port
                 },
                 ClientSecrets = new List<Secret>
                 {

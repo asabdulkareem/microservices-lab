@@ -13,7 +13,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddTransient<AuthenticationDelegatingHandler>();
 builder.Services.AddHttpClient("IDFClient", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:6066/");
+    client.BaseAddress = new Uri("http://localhost:6006/");
     client.DefaultRequestHeaders.Clear();
     client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
 });
@@ -52,7 +52,7 @@ builder.Services.AddRefitClient<IOrderingService>()
                 options.ClientId = "Web_client";
                 options.ClientSecret = "secret";
                 options.ResponseType = "code id_token";
-
+                options.RequireHttpsMetadata = false;
                 options.Scope.Add("openid");
                 options.Scope.Add("profile");
                 options.Scope.Add("microserviceAPI");
